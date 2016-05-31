@@ -1,0 +1,125 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Results</h1>
+	<div id="piechart_3d_1" style="width: 900px; height: 500px;"></div>
+	<div id="piechart_3d_2" style="width: 900px; height: 500px;"></div>
+	<div id="piechart_3d_3" style="width: 900px; height: 500px;"></div>
+	<div id="piechart_3d_4" style="width: 900px; height: 500px;"></div>
+	<div id="piechart_3d_5" style="width: 900px; height: 500px;"></div>
+	<div id="piechart_3d_6" style="width: 900px; height: 500px;"></div>
+	<div id="piechart_3d_7" style="width: 900px; height: 500px;"></div>
+	<div id="piechart_3d_8" style="width: 900px; height: 500px;"></div>
+</div>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data1 = new google.visualization.DataTable();
+		data1.addColumn('string', 'Question');
+		data1.addColumn('number', 'Average answer');
+		data1.addRows( {{ data1|tojson }} );
+		
+		var data2 = new google.visualization.DataTable();
+		data2.addColumn('string', 'Question');
+		data2.addColumn('number', 'Average answer');
+		data2.addRows( {{ data2|tojson }} );
+		
+		var data3 = new google.visualization.DataTable();
+		data3.addColumn('string', 'Question');
+		data3.addColumn('number', 'Average answer');
+		data3.addRows( {{ data3|tojson }} );
+		
+		var data4 = new google.visualization.DataTable();
+		data4.addColumn('string', 'Question');
+		data4.addColumn('number', 'Average answer');
+		data4.addRows( {{ data4|tojson }} );
+		
+		var data5 = new google.visualization.DataTable();
+		data5.addColumn('string', 'Question');
+		data5.addColumn('number', 'Average answer');
+		data5.addRows( {{ data5|tojson }} );
+		
+		var data6 = new google.visualization.DataTable();
+		data6.addColumn('string', 'Question');
+		data6.addColumn('number', 'Average answer');
+		data6.addRows( {{ data6|tojson }} );
+		
+		var data7 = new google.visualization.DataTable();
+		data7.addColumn('string', 'Question');
+		data7.addColumn('number', 'Average answer');
+		data7.addRows( {{ data7|tojson }} );
+		
+		var data8 = new google.visualization.DataTable();
+		data8.addColumn('string', 'Question');
+		data8.addColumn('number', 'Average answer');
+		data8.addRows( {{ data8|tojson }} );
+
+        var options1 = {
+          title: '1.Jak często uprawiasz sport?',
+          is3D: true,
+        };
+		
+		var options2 = {
+          title: '2.Jak najchetniej spędzasz wolny czas?',
+          is3D: true,
+        };
+		
+		var options3 = {
+          title: '3.Jak często jesz owoce i warzywa?',
+          is3D: true,
+        };
+		
+		var options4 = {
+          title: '4.Ile posiłków dziennie spożywasz?',
+          is3D: true,
+        };
+		
+		var options5 = {
+          title: '5.Ile płynów dostarczasz swojemu organizmowi dziennie?',
+          is3D: true,
+        };
+		
+		var options6 = {
+          title: '6.Ile czasu w ciągu doby poświęcasz na sen?',
+          is3D: true,
+        };
+		
+		var options7 = {
+          title: '7.Jak często pijesz alkohol?',
+          is3D: true,
+        };
+		
+		var options8 = {
+          title: '8.Czy palisz papierosy?',
+          is3D: true,
+        };
+
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));
+        chart1.draw(data1, options1);
+		var chart2 = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
+        chart2.draw(data2, options2);
+		var chart3 = new google.visualization.PieChart(document.getElementById('piechart_3d_3'));
+        chart3.draw(data3, options3);
+		var chart4 = new google.visualization.PieChart(document.getElementById('piechart_3d_4'));
+        chart4.draw(data4, options4);
+		var chart5 = new google.visualization.PieChart(document.getElementById('piechart_3d_5'));
+        chart5.draw(data5, options5);
+		var chart6 = new google.visualization.PieChart(document.getElementById('piechart_3d_6'));
+        chart6.draw(data6, options6);
+		var chart7 = new google.visualization.PieChart(document.getElementById('piechart_3d_7'));
+        chart7.draw(data7, options7);
+		var chart8 = new google.visualization.PieChart(document.getElementById('piechart_3d_8'));
+        chart8.draw(data8, options8);
+      }
+    </script>
+	
+
+
+{% endblock %}
