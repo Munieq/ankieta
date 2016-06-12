@@ -5,7 +5,7 @@ import statistics
 
 app = Flask(__name__)
 app.run(
-    host="192.168.2.101",
+    host="0.0.0.0",
     port=5000
 )
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
